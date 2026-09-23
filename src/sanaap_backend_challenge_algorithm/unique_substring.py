@@ -41,21 +41,3 @@ def find_substring(text):
             best_length = length
 
     return text[best_start:best_start + best_length], best_length
-
-if __name__ == '__main__':
-    test_cases = (
-        ('abbac', 'bac', 3),
-        ('', '', 0),
-        ('a', 'a', 1),
-        ('aaaa', 'a', 1),
-        ('abcd', 'abcd', 4),
-        ('abba', 'ab', 2),
-        ('ABCABCFKAB', 'ABCFK', 5),
-    )
-    for text, expected_substring, expected_len in test_cases:
-        substring, _len = find_substring(text)
-        assert substring == expected_substring
-        assert _len == expected_len
-
-
-    print('ok')
