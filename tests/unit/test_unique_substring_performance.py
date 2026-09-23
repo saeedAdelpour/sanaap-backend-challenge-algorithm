@@ -26,8 +26,8 @@ class FindSubstringPerformanceTests(unittest.TestCase):
         self.assertLess(
             elapsed,
             self.MAX_DURATION_SECONDS,
-            f'{len(text):,} characters took {elapsed:.3f}s '
-            f'(limit: {self.MAX_DURATION_SECONDS:.1f}s)',
+            f"{len(text):,} characters took {elapsed:.3f}s "
+            f"(limit: {self.MAX_DURATION_SECONDS:.1f}s)",
         )
 
     def test_one_million_repeated_characters(self):
@@ -37,5 +37,4 @@ class FindSubstringPerformanceTests(unittest.TestCase):
         self.assert_large_case(distinct_characters_case)
 
     def test_one_million_characters_with_large_unique_windows(self):
-        print(repeated_alphabet_case())
         self.assert_large_case(repeated_alphabet_case)
