@@ -5,19 +5,19 @@ def find_substring_naive(text):
     """
     find best substring that has no duplicate char
 
-    time: O(n^2)
-    space: O(n^2)
+    time: O(n^3)
+    space: O(n^3)
     """
     out = []
     for i in range(len(text)):
-        for j in range(i+1, len(text)+1):
+        for j in range(i + 1, len(text) + 1):
             t = text[i:j]
             has_dup = any(x > 1 for x in Counter(t).values())
             if has_dup:
                 break
             out.append(t)
     if not out:
-        return '', 0
+        return "", 0
     best = max(out, key=lambda x: len(x))
     return best, len(best)
 
@@ -40,4 +40,4 @@ def find_substring(text):
             best_start = start
             best_length = length
 
-    return text[best_start:best_start + best_length], best_length
+    return text[best_start : best_start + best_length], best_length
