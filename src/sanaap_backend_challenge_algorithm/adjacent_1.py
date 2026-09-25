@@ -25,4 +25,4 @@ def find_adjacent_1(text, expect_to_found=EXPECT_TO_FOUND):
     if not seen:
         return 0, False
     length = max(map(len, seen.values()))
-    return length, length >= expect_to_found
+    return length, (len(text) >= expect_to_found) and length >= expect_to_found
